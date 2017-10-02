@@ -1,0 +1,43 @@
+@import play.api.Play.current
+@(title: String)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <head>
+        <title>@title</title>
+
+        <!-- variables -->
+        <script type="application/javascript">
+            //TODO have a webservice for that
+            window.wc_HTTP_URL = '@current.configuration.getString("url.http")';
+            window.wc_HTTPS_URL = '@current.configuration.getString("url.https")';
+            window.wc_URL = window.wc_HTTP_URL;
+            window.wc_ACTION_BUTTON_URL = '@routes.Assets.versioned("ng2-js/standalone/button.js")';
+            window.wc_ACTION_BUTTON_LINK_URL = '@routes.Assets.versioned("ng2-js/standalone/button_link.js")';
+            window.ws_ACTION_BUTTON_CHECK_PAGE_URL = '@routes.Assets.versioned("ng2-js/standalone/button_check_page.js")';
+        </script>
+
+        <!-- angular 2 -->
+        <!-- From : https://angular.io/docs/js/latest/quickstart.html -->
+        <script src="@routes.Assets.versioned("bower_components/traceur-runtime/traceur-runtime.min.js")"></script>
+        <!-- load es6 because system.js need it and will try to load it if not found -->
+        <script src="@routes.Assets.versioned("bower_components/es6-module-loader/dist/es6-module-loader.js")"></script>
+        <script src="@routes.Assets.versioned("bower_components/systemjs/dist/system.js")"></script>
+        <script src="@routes.Assets.versioned("bower_components/angular2.dev/index.js")"></script>
+
+        <!-- jquery -->
+        <script src="@routes.Assets.versioned("bower_components/jquery/dist/jquery.js")" type="text/javascript"></script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("bower_components/bootstrap/dist/css/bootstrap.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("bower_components/bootstrap/dist/css/bootstrap-theme.min.css")">
+        <script src="@routes.Assets.versioned("bower_components/bootstrap/dist/js/bootstrap.min.js")"></script>
+
+
+    </head>
+    <body>
+        <script src="http://localhost:1337/app-bundle.js"></script>
+    </body>
+</html>

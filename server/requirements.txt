@@ -1,0 +1,5 @@
+Flask==0.10.1
+gunicorn==19.4.5
+flask_sqlalchemy==2.1
+Flask-PyMongo==0.4.1
+PyMySQL==0.7.2

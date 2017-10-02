@@ -1,0 +1,19 @@
+{
+  "name": "WebComment",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular2.dev": "https://code.angularjs.org/2.0.0-alpha.28/angular2.dev.js",
+    "bootstrap": "~3.3.5",
+    "es6-module-loader": "https://github.com/ModuleLoader/es6-module-loader.git#~0.16",
+    "jquery": "~1.11.3",
+    "moment": "~2.10.6",
+    "systemjs": "https://github.com/systemjs/systemjs.git#~0.16",
+    "traceur-runtime": "~0.0.90"
+  }
+}

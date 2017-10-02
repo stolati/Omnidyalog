@@ -1,0 +1,32 @@
+# all dote files
+.*
+!/.gitignore
+
+*.class
+*.log
+
+# intellij
+.idea
+webcomment.iml
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+app/assets/node_modules/
+app/assets/ng2/**/*.js
+
+
+app/assets/angular2/
+app/assets/dist/
+app/assets/dist/
+app/assets/rtts_assert/
+app/assets/typings/
+app/assets/ng2-js/
+app/assets/bower_components/
+conf/generated.keystore

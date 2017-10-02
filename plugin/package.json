@@ -1,0 +1,28 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "description": "Comment wherever you want",
+  "author": "Mickael Kerbrat",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/stolati/WebComment"
+  },
+  "dependencies": {
+    "jpm": "^1.0.7",
+    "react": "^0.14.8",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "npm install --quiet ; typings install",
+    "typings.install": "typings install",
+    "chrome.package": "npm run chrome.compile",
+    "firefox.package": "npm run firefox.jsx.compile ; cd code/firefox ; jpm xpi",
+    "chrome.compile": "tsc --jsx react --outFile ./code/chrome/content.js ./code/core/main.tsx",
+    "chrome.watch": "tsc --watch --jsx react --outFile ./code/chrome/content.js ./code/core/main.tsx",
+    "firefox.jsx.compile": "tsc --jsx react --outFile ./code/firefox/data/content.js ./code/core/main.tsx",
+    "firefox.jsx.watch": "tsc --watch --jsx react --outFile ./code/firefox/data/content.js ./code/core/main.tsx"
+  }
+}

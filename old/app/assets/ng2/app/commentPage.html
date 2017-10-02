@@ -1,0 +1,26 @@
+<div [style.display]="inSelection ? 'inline' : 'none'" class="ws_comment_bypass">
+    <div [style.left]="(t.left - 4) + 'px'"
+         [style.top]="(t.top - 4) + 'px'"
+         [style.width]="(t.width + 5) + 'px'"
+         style="background: blue; height:3px; position: fixed; z-index: 999999"
+     ></div>
+
+    <div [style.top]="(t.top + t.height + 1) + 'px'" class="ws_comment_bypass"
+         [style.left]="(t.left  - 3) + 'px'"
+         [style.width]="(t.width + 4) + 'px'"
+         style="background: blue; height:3px; position: fixed; z-index: 999999"
+    ></div>
+
+    <div [style.left]="(t.left  - 5) + 'px'" class="ws_comment_bypass"
+         [style.top]="(t.top  - 4) + 'px'"
+         [style.height]="(t.height + 8) + 'px'"
+         style="background: blue; width:3px; position: fixed; z-index: 999999"
+    ></div>
+
+    <div [style.left]="(t.left + t.width + 1) + 'px'" class="ws_comment_bypass"
+         [style.top]="(t.top  - 4) + 'px'"
+         [style.height]="(t.height + 8) + 'px'"
+         style="background: blue; width:3px; position: fixed; z-index: 999999"
+     ></div>
+
+</div>

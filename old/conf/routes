@@ -1,0 +1,42 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET           /innerFrame                             controllers.HtmlController.innerFrame
+GET           /                                       controllers.HtmlController.index
+GET           /ng2                                    controllers.HtmlController.ng2
+GET           /spa                                    controllers.HtmlController.spa
+GET           /dev                                    controllers.HtmlController.dev
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                           controllers.Assets.versioned(path="/public", file: Asset)
+
+# Page rest API
+POST          /page                                   controllers.PageController.create_js
+GET           /page/most_commented                    controllers.PageController.mostCommented_js(size: Int ?= 10)
+GET           /page/exists                            controllers.PageController.exists_js(url: String)
+GET           /page/find                              controllers.PageController.findByText_js(pageSize: Int ?= 10, pageNum: Int ?= 0, text: String ?= "")
+GET           /page/:pageId                           controllers.PageController.getPage(pageId : String, full: Boolean ?= false)
+DELETE        /page/:pageId                           controllers.PageController.delete(pageId : String)
+GET           /page                                   controllers.PageController.getAllPages
+
+# Comment rest API
+POST          /page/:pageId/comment                   controllers.CommentsController.create_js(pageId: String)
+GET           /page/:pageId/comment                   controllers.CommentsController.getByPage(pageId: String)
+GET           /page/:pageId/comment/:commentId        controllers.CommentsController.get(pageId: String, commentId: String)
+DELETE        /page/:pageId/comment/:commentId        controllers.CommentsController.delete(pageId: String, commentId: String)
+
+GET           /user/comments/last                     controllers.UserCommentController.getLastCommentsInPage_js(size : Int ?= 10)
+GET           /user/favorites                         controllers.UserFavoritesController.get_js
+POST          /user/favorites                         controllers.UserFavoritesController.post_js
+DELETE        /user/favorites/:pageId                 controllers.UserFavoritesController.delete_js(pageId: String)
+
+GET           /user/current                           controllers.UserController.getCurrentUser_js
+POST          /user/signin                            controllers.UserController.signin_js
+POST          /user/logout                            controllers.UserController.logout_js
+POST          /user/login                             controllers.UserController.login_js
+
+GET           /load                                   controllers.HtmlCrawlerController.crawl_n_redirect(url: String)
+GET           /load/but_get_page                      controllers.HtmlCrawlerController.crawl_js(url: String)
+

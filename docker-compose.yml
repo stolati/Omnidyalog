@@ -1,0 +1,15 @@
+version: '2'
+services:
+  server:
+    build: .
+    ports:
+    - '80:80'
+    links:
+    - mongo:mongo.internal.omnidyalog.com
+    environment:
+      MONGO_URI: 'mongodb://mongo.internal.omnidyalog.com:27017/omnidyalog'
+  mongo:
+    # TODO have a directory on host for storage (not loozing every time we deploy)
+    # https://hub.docker.com/_/mongo/
+    image: mongo:3
+

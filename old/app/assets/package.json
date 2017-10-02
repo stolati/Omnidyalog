@@ -1,0 +1,21 @@
+{
+  "name": "WebComment",
+  "description": "Grab a web page and annotate it",
+  "version": "0.0.1",
+  "repository": "https://github.com/stolati/WebComment",
+  "comment": "vinyl and vinyl-fs are added after my gulp stopped working, remove them eventually",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-shell": "^0.3.0",
+    "run-sequence": "^1.0.2",
+    "gulp-typescript": "^2.7.6",
+    "typescript": "^1.5.0-beta"
+  },
+  "dependencies": {
+  }
+}
+

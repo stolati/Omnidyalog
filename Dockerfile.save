@@ -1,0 +1,35 @@
+
+FROM node:5.10
+MAINTAINER Mickael Kerbrat
+LABEL version=0.1
+
+ENV main_dir /app
+
+RUN mkdir ${main_dir}
+WORKDIR ${main_dir}
+
+EXPOSE 8888
+
+COPY client ${main_dir}/client
+COPY react ${main_dir}/react
+COPY server ${main_dir}/server
+
+# cleaning (we should have
+
+
+
+# Compiling the jsx for the extentions
+WORKDIR ${main_dir}/client
+RUN npm run install
+RUN npm run firefox.package
+RUN cp "${main_dir}/client/code/firefox/@firefox-0.0.1.xpi" "${main_dir}/server/code/public/firefox.xpi"
+
+#WORKDIR ${main_dir}/react
+WORKDIR ${main_dir}/server
+RUN npm run build
+#RUN npm install --quiet
+#
+#WORKDIR ${main_dir}/
+
+CMD bash
+

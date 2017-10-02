@@ -1,0 +1,19 @@
+{
+  "title": "WebComment",
+  "name": "firefox",
+  "version": "0.0.1",
+  "description": "Comment wherever you want",
+  "main": "index.js",
+  "author": "Mickael Kerbrat",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+  ],
+  "scripts":{
+    "firefox_watch": "jpm watchpost --post-url http://localhost:8888/ -v",
+    "firefox_compile": "jpm xpi"
+  }
+}
